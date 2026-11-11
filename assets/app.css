@@ -1,0 +1,24 @@
+/* countries: flags, country hero, quiz */
+.fl{border:1px solid var(--line);border-radius:4px;flex:none;background:#fff;object-fit:cover}
+.fl.big{border-radius:10px;box-shadow:var(--shadow);width:120px;height:90px}
+.fgrid a{justify-content:flex-start;gap:12px}
+.fgrid a span{display:flex;flex-direction:column;min-width:0}
+.fgrid a small{white-space:normal}
+.chero{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.chero>div{flex:1 1 260px;min-width:0}
+.chero p{max-width:75ch}
+td .fl{vertical-align:-4px;margin-right:6px}
+.clock b{font-family:var(--mono);font-size:1.1rem}
+th[data-sort]{cursor:pointer;user-select:none}
+th[data-sort]::after{content:" ↕";color:var(--soft);font-weight:400}
+th[data-sort][aria-sort=ascending]::after{content:" ↑";color:var(--accent)}
+th[data-sort][aria-sort=descending]::after{content:" ↓";color:var(--accent)}
+.cmp th:not(:first-child),.cmp td:not(:first-child){text-align:right}
+.cmp .win{color:var(--ok);font-weight:700}
+.cmp thead th{white-space:normal}
+.qopts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));margin:12px 0}
+.qopts button{min-height:52px;padding:10px;border-radius:10px;border:1px solid var(--field-line);background:var(--field);color:var(--ink);font:600 1.02rem var(--font);cursor:pointer}
+.qopts button.right{background:var(--ok);color:var(--accent-ink);border-color:var(--ok)}
+.qopts button.wrong{border-color:var(--bad);color:var(--bad)}
+.qask{font:700 1.25rem var(--font-head);margin:.6em 0 .2em}
+.qflag{display:block;width:min(100%,240px);height:auto;aspect-ratio:4/3;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
