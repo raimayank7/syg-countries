@@ -1,9 +1,0 @@
-.ib-code{font-family:var(--mono);font-weight:500;overflow-wrap:anywhere}
-.ib-seg{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;padding:0;list-style:none}
-.ib-seg li{border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:var(--surface2);min-width:0}
-.ib-seg b{display:block;font:500 1.05rem var(--mono);letter-spacing:.06em;overflow-wrap:anywhere}
-.ib-seg small{color:var(--soft);font-size:.78rem}
-.ib-seg li:nth-child(1){border-color:var(--accent)}.ib-seg li:nth-child(2){border-color:var(--amber)}
-textarea{width:100%;min-height:76px;padding:10px 12px;font:500 1.05rem var(--mono);color:var(--ink);background:var(--field);border:1px solid var(--field-line);border-radius:10px;resize:vertical}
-.result.bad{border-color:var(--bad)}.result.bad h2{color:var(--bad)}.result.ok h2{color:var(--ok)}
-.ib-empty{color:var(--soft);padding:10px 2px}
