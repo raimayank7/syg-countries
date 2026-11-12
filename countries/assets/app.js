@@ -8,7 +8,7 @@
 
   /* country page: remember it, run its clock */
   var art = $('[data-c]');
-  if (art) S.recent(KEY, { u: '/' + art.getAttribute('data-c') + '/', t: art.getAttribute('data-name') });
+  if (art) S.recent(KEY, { u: '/countries/' + art.getAttribute('data-c') + '/', t: art.getAttribute('data-name') });
   var ck = $('.clock[data-tz]');
   if (ck) {
     var tick = function () {
