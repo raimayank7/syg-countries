@@ -1,0 +1,4 @@
+.h-tbl td,.h-tbl th{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}.h-tbl table{width:100%;border-collapse:collapse}
+.h-code{font-family:var(--mono);font-weight:500;white-space:nowrap}.h-res{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}
+.h-res a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--ink)}.h-res small{color:var(--soft)}
+@media (max-width:640px){.h-tbl thead{display:none}.h-tbl tr{display:grid;gap:1px;padding:8px 6px;border-bottom:1px solid var(--line)}.h-tbl td{border:0;padding:1px 0}.h-code{white-space:normal}}

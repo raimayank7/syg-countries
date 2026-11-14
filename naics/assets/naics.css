@@ -1,0 +1,3 @@
+.n-tbl td,.n-tbl th{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}.n-tbl table{width:100%;border-collapse:collapse}.n-code{font-family:var(--mono);font-weight:500;white-space:nowrap}
+.n-res{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}.n-res a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--ink)}.n-res small{color:var(--soft)}
+@media (max-width:640px){.n-tbl thead{display:none}.n-tbl tr{display:grid;gap:1px;padding:8px 6px;border-bottom:1px solid var(--line)}.n-tbl td{border:0;padding:1px 0}.n-code{white-space:normal}}
