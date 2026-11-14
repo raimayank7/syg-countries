@@ -1,0 +1,4 @@
+.x-in{display:flex;gap:8px;flex-wrap:wrap}.x-in select,.x-in input{flex:1 1 220px;min-height:48px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.x-res{margin:12px 0;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}.x-ok{border-left:6px solid #2e9e5b}.x-bad{border-left:6px solid #d1453b}.x-nc{border-left:6px solid #c58b00}
+.x-mono{font-family:var(--mono);overflow-wrap:anywhere}.x-tbl table{border-collapse:collapse}.x-tbl td,.x-tbl th{padding:6px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+.x-ex button{margin:2px 4px 2px 0}
