@@ -1,0 +1,9 @@
+(function(){'use strict';var d=document,S=window.SYG,$=function(s){return d.querySelector(s)};
+var fi=$('[data-filter]');if(fi){var rows=[].slice.call(d.querySelectorAll(fi.getAttribute('data-filter')));fi.addEventListener('input',function(){var q=fi.value.trim().toLowerCase();rows.forEach(function(r){r.hidden=!!q&&r.textContent.toLowerCase().indexOf(q)<0})})}
+var box=$('#c-in'),res=$('#c-res'),DATA=null;if(!box)return;
+function load(){if(DATA)return Promise.resolve();return S.json('/schools/data/s.json').then(function(j){DATA=j.s.map(function(r){return{n:r[0],c:r[1],s:r[2],p:r[3],k:(r[0]+' '+r[1]+' '+r[2]).toLowerCase()}})})}
+function run(){var q=box.value.trim().toLowerCase();if(!q){res.hidden=true;return}var ws=q.split(/\s+/);var out=[];for(var i=0;i<DATA.length&&out.length<400;i++){var r=DATA[i],ok=true;for(var j=0;j<ws.length;j++)if(r.k.indexOf(ws[j])<0){ok=false;break}if(ok)out.push(r)}
+ res.hidden=false;if(!out.length){res.innerHTML='<p class="hint">No school matches "'+S.esc(q)+'". Try part of the name and the town, for example "lincoln high springfield".</p>';return}
+ res.innerHTML='<ul class="c-res">'+out.slice(0,40).map(function(r){return '<li><a href="'+r.p+'"><span><b>'+S.esc(r.n)+'</b><br><small>'+S.esc(r.c+', '+r.s)+'</small></span></a></li>'}).join('')+'</ul>'+(out.length>=400?'<p class="hint">More than 400 matches; showing 40. Add the town to narrow it.</p>':(out.length>40?'<p class="hint">'+out.length+' matches; showing 40.</p>':''))}
+var t;box.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){load().then(run)},150)});box.addEventListener('focus',function(){load()},{once:true});
+$('#c-form').addEventListener('submit',function(e){e.preventDefault();load().then(run)})})();

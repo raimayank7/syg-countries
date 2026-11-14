@@ -1,0 +1,5 @@
+.p-tbl td,.p-tbl th{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}.p-tbl table{width:100%;border-collapse:collapse}
+.p-code{font-family:var(--mono);font-weight:500;overflow-wrap:anywhere}
+.p-res{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}.p-res li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;display:flex;gap:12px;justify-content:space-between;align-items:center}
+.p-res b{font-family:var(--mono)}.p-res small{color:var(--soft);display:block}
+@media (max-width:640px){.p-tbl thead{display:none}.p-tbl tr{display:grid;grid-template-columns:1fr;gap:1px;padding:8px 6px;border-bottom:1px solid var(--line)}.p-tbl td{border:0;padding:1px 0}}
