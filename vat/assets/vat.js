@@ -1,0 +1,11 @@
+(function(){'use strict';var d=document,S=window.SYG,$=function(s){return d.querySelector(s)};
+var fi=$('[data-filter]');if(fi){var rows=[].slice.call(d.querySelectorAll(fi.getAttribute('data-filter')));fi.addEventListener('input',function(){var q=fi.value.trim().toLowerCase();rows.forEach(function(r){r.hidden=!!q&&r.textContent.toLowerCase().indexOf(q)<0})})}
+var cs=$('#v-cc');if(!cs)return;var R=null;
+function load(){if(R)return Promise.resolve();return S.json('/vat/data/rates.json').then(function(j){R=j;cs.innerHTML=j.map(function(c,i){return '<option value="'+i+'">'+S.esc(c[0])+'</option>'}).join('');var q=(location.search.match(/[?&]c=([^&]+)/)||[])[1];if(q)for(var i=0;i<j.length;i++)if(j[i][2]===q)cs.value=i;fill()})}
+function fill(){var c=R[+cs.value];$('#v-rate').innerHTML=c[1].map(function(r,i){return '<option value="'+r[0]+'">'+r[0]+'% - '+S.esc(r[1])+'</option>'}).join('')+'<option value="custom">Another rate (type it below)</option>';run()}
+function m(v){return v.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function run(){if(!R)return;var rate=$('#v-rate').value;var cu=$('#v-custom');cu.parentNode.hidden=rate!=='custom';var p=rate==='custom'?parseFloat(cu.value):parseFloat(rate),a=parseFloat($('#v-amt').value),mode=d.querySelector('input[name=v-mode]:checked').value;
+ if(!(p>=0)||!(a>=0)){$('#v-out').innerHTML='<p class="hint">Enter an amount and a rate.</p>';return}
+ var net,vat,gross;if(mode==='add'){net=a;vat=a*p/100;gross=a+vat}else{gross=a;net=a/(1+p/100);vat=gross-net}
+ $('#v-out').innerHTML='<p>Without VAT: <b>'+m(net)+'</b><br>VAT at '+p+'%: <b>'+m(vat)+'</b><br>With VAT: <b>'+m(gross)+'</b></p><p class="hint">Rounded to two decimals; the rounding rules for invoices differ between countries and are not applied here.</p>'}
+['#v-cc'].forEach(function(s){$(s).addEventListener('change',fill)});['#v-rate','#v-amt','#v-custom'].forEach(function(s){$(s).addEventListener('input',run);$(s).addEventListener('change',run)});d.querySelectorAll('input[name=v-mode]').forEach(function(e){e.addEventListener('change',run)});load()})();
