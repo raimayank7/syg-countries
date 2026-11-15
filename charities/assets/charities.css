@@ -1,3 +1,0 @@
-.h-tbl table{width:100%;border-collapse:collapse}.h-tbl td,.h-tbl th{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}.h-tbl td.n,.h-tbl th.n{text-align:right;font-variant-numeric:tabular-nums}
-.h-big{font:600 clamp(2.2rem,8vw,3.6rem)/1.1 var(--mono)}.h-big small{font-size:.4em;color:var(--soft)}
-@media (max-width:640px){.h-tbl thead{display:none}.h-tbl tr{display:grid;gap:1px;padding:8px 6px;border-bottom:1px solid var(--line)}.h-tbl td{border:0;padding:1px 0;text-align:left!important}.h-tbl td[data-l]::before{content:attr(data-l) ": ";color:var(--soft)}}
