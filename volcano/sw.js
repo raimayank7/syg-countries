@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-volcano-5f0e96f5c0', SHELL = ["/volcano/assets/site.css?v=bdcd893b36", "/volcano/assets/site.js?v=be6129bb4a", "/volcano/icons/logo-light.webp", "/volcano/icons/logo-dark.webp"];
+const CACHE = 'syg-m-volcano-5010c6a73a', SHELL = ["/volcano/assets/site.css?v=403176beac", "/volcano/assets/site.js?v=38b96724e9", "/volcano/icons/logo-light.webp", "/volcano/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-volcano-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
