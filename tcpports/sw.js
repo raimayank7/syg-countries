@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-tcpports-75c362940e', SHELL = ["/tcpports/assets/site.css?v=9cff45ef36", "/tcpports/assets/site.js?v=38b96724e9", "/tcpports/icons/logo-light.webp", "/tcpports/icons/logo-dark.webp"];
+const CACHE = 'syg-m-tcpports-581ccef9e8', SHELL = ["/tcpports/assets/site.css?v=d60c1f9d8f", "/tcpports/assets/site.js?v=38b96724e9", "/tcpports/icons/logo-light.webp", "/tcpports/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-tcpports-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

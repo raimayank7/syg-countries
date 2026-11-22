@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-chem-75c362940e', SHELL = ["/chem/assets/site.css?v=9cff45ef36", "/chem/assets/site.js?v=38b96724e9", "/chem/icons/logo-light.webp", "/chem/icons/logo-dark.webp"];
+const CACHE = 'syg-m-chem-581ccef9e8', SHELL = ["/chem/assets/site.css?v=d60c1f9d8f", "/chem/assets/site.js?v=38b96724e9", "/chem/icons/logo-light.webp", "/chem/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-chem-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

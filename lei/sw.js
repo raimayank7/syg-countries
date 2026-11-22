@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-lei-75c362940e', SHELL = ["/lei/assets/site.css?v=9cff45ef36", "/lei/assets/site.js?v=38b96724e9", "/lei/icons/logo-light.webp", "/lei/icons/logo-dark.webp"];
+const CACHE = 'syg-m-lei-581ccef9e8', SHELL = ["/lei/assets/site.css?v=d60c1f9d8f", "/lei/assets/site.js?v=38b96724e9", "/lei/icons/logo-light.webp", "/lei/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-lei-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
