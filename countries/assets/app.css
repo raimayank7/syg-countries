@@ -22,3 +22,6 @@ th[data-sort][aria-sort=descending]::after{content:" ↓";color:var(--accent)}
 .qopts button.wrong{border-color:var(--bad);color:var(--bad)}
 .qask{font:700 1.25rem var(--font-head);margin:.6em 0 .2em}
 .qflag{display:block;width:min(100%,240px);height:auto;aspect-ratio:4/3;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+
+/* phones (layout plan P3): the country names under the flags in the compare table are a full 44 px tap */
+@media (max-width:600px){table.cmp th a{display:inline-flex;align-items:center;min-height:44px}}

@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-storms-581ccef9e8', SHELL = ["/storms/assets/site.css?v=d60c1f9d8f", "/storms/assets/site.js?v=38b96724e9", "/storms/icons/logo-light.webp", "/storms/icons/logo-dark.webp"];
+const CACHE = 'syg-m-storms-82edbd176f', SHELL = ["/storms/assets/site.css?v=36eb89c45d", "/storms/assets/site.js?v=9977d20129", "/storms/icons/logo-light.webp", "/storms/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-storms-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

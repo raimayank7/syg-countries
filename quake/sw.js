@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-quake-581ccef9e8', SHELL = ["/quake/assets/site.css?v=d60c1f9d8f", "/quake/assets/site.js?v=38b96724e9", "/quake/icons/logo-light.webp", "/quake/icons/logo-dark.webp"];
+const CACHE = 'syg-m-quake-82edbd176f', SHELL = ["/quake/assets/site.css?v=36eb89c45d", "/quake/assets/site.js?v=9977d20129", "/quake/icons/logo-light.webp", "/quake/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-quake-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

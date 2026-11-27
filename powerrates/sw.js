@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-powerrates-581ccef9e8', SHELL = ["/powerrates/assets/site.css?v=d60c1f9d8f", "/powerrates/assets/site.js?v=38b96724e9", "/powerrates/icons/logo-light.webp", "/powerrates/icons/logo-dark.webp"];
+const CACHE = 'syg-m-powerrates-82edbd176f', SHELL = ["/powerrates/assets/site.css?v=36eb89c45d", "/powerrates/assets/site.js?v=9977d20129", "/powerrates/icons/logo-light.webp", "/powerrates/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-powerrates-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
